@@ -2,6 +2,23 @@
   {
     "id": 1,
     "label": "root",
-    "children": []
+    "children": [
+      {
+        "id": 2,
+        "label": "sd",
+        "children": [
+          {
+            "id": 3,
+            "label": "sdss",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "label": "sdss",
+        "children": []
+      }
+    ]
   }
 ]

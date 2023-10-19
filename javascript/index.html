@@ -1,0 +1,49 @@
+<br><button>Get Animals</button>
+<br><br><br>
+<form>
+    <input type="text" id="parentId" name="parentId" placeholder="Provide parent id">
+    <input type="text" id="animalName" name="animalName" placeholder="Provide animal name">
+    <input type="submit" id="submit" value="Add animal">
+</form>
+<br />
+<br />
+<pre id="response" style="padding: 20px"></pre>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', 'button', function () {
+            $.ajax({
+                url: "http://localhost:3001/api/tree"
+            }).done(function (resp) {
+                $('#response').html(JSON.stringify(resp, null, 4));
+            });
+        });
+
+        $("#submit").click(function (e) {
+            e.preventDefault();
+            let parentId = $("#parentId").val();
+            let animalName = $("#animalName").val();
+            const requestBody = {
+                parent: parentId,
+                label: animalName
+            };
+            $.ajax({
+                url: "http://localhost:3001/api/tree",
+                type: "POST",
+                data: JSON.stringify(requestBody),
+                contentType: "application/json",
+                success: function (data) {
+                    // console.log(data);
+                    $.ajax({
+                        url: "http://localhost:3001/api/tree"
+                    }).done(function (resp) {
+                        $('#response').html(JSON.stringify(resp, null, 4));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                },
+            });
+        });
+    });
+</script>
