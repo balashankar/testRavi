@@ -49,7 +49,8 @@ This route returns the current state of the hierarchical tree. The tree structur
         }
     ]
 }
-
+```
+ 
 ## POST - /api/tree
 
 This route allows us to add a new node to the tree. We must provide a JSON payload specifying the parent node's ID and the label for the new node.
@@ -62,6 +63,7 @@ This route allows us to add a new node to the tree. We must provide a JSON paylo
     "parent": "<id>",
     "label": "<label>"
 }
+```
 
 ### Sample Response
 If successful, the route will return the details of the newly added node.
@@ -71,6 +73,7 @@ If successful, the route will return the details of the newly added node.
     "label": "newNode",
     "children": []
 }
+```
 
 ### Error Response
 If the specified parent node is not found, the route will return a 404 error.
@@ -78,6 +81,7 @@ If the specified parent node is not found, the route will return a 404 error.
 {
     "error": "Parent node not found"
 }
+```
 
 ## Implementation Notes
 - The sample code provided uses an simple JSON file (treeData) to represent the tree structure. In a real-world scenario, we should replace this with actual database interactions.
