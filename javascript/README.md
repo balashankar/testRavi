@@ -8,6 +8,6 @@ To start your server, run `node index.js`.  Open up your favorite browser and na
 
 To run tests for the project, run `npm test`.
 
-To lint the project, run `npm run lint`.
+To lint the project, run `npm run lint`
 
 Now follow the steps outlined in [The Problem](https://github.com/hinge-health/interviews-services#the-problem)
