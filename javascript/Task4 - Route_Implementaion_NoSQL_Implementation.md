@@ -30,6 +30,7 @@ router.get('/api/tree', async (req, res) => {
 });
 
 module.exports = router;
+```
 
 
 # Tree API - POST `/api/tree`
@@ -52,6 +53,7 @@ The POST route `/api/tree` enables you to add a new node to the existing tree st
     "parent": "<id>",
     "label": "<label>"
 }
+```
 
 - parent (string): The ID of the parent node to which you want to attach the new node.
 - label (string): The label or name for the new node.
@@ -64,6 +66,7 @@ If the request is successful, the server will respond with a JSON object represe
     "_id": "unique-node-id",
     "name": "<label>"
 }
+```
 
 - _id (string): A unique identifier for the newly added node.
 - name (string): The label of the newly added node.
@@ -73,6 +76,7 @@ Error Response
 {
     "message": "Error message"
 }
+```
 
 - message (string): An error message describing the issue with the request, such as missing parameters or a non-existent parent node.
 
@@ -115,5 +119,4 @@ router.post('/api/tree', async (req, res) => {
 });
 
 module.exports = router;
-
-
+```
