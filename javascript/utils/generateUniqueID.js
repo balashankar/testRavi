@@ -1,6 +1,6 @@
 const IdGenerator = (function () {
   let instance;
-  
+
   function createInstance() {
     let count = 1;
 
@@ -14,14 +14,14 @@ const IdGenerator = (function () {
   }
 
   return {
-    getInstance: function () {
+    getInstance() {
       if (!instance) {
         instance = createInstance();
       }
       return instance;
     },
   };
-})();
+}());
 
 module.exports = {
   IdGenerator,

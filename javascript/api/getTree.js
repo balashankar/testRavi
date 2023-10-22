@@ -1,7 +1,7 @@
-let data = require('../json/tree.json');
+const data = require('../data/tree.json');
 
 function getTree(req, res) {
-    res.json(data);
+  res.json(data);
 }
 
 module.exports = {
